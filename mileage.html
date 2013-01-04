@@ -6,34 +6,94 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="normalize.css">
+<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
 <style>
   body {
     padding: 1em;
     font-size: 1.3em;
   }
+  fieldset{
+    float: left;
+    width: 45%;
+  }
+  label {
+    display: block;
+  }
   #results {
-    padding: 20px;
-    border: 2px solid #ccc;
+    clear: both;
 
+  }
+  table {
+    width: 100%;
+  }
+  table td,
+  table th {
+    border: 1px solid #ccc;
+  }
+  #map {
+    float: right;
+    height: 400px;
+    width:50%;
+  }
+  footer {
+    clear: both;
+  }
+
+  #debug {
+    clear: both;
+    font-size: 1em;
+    padding: 1em;
+    margin: 1em 0;
+    border: 2px solid #cc0000;
+    font-family: monospace;
   }
 </style>
 
 <header>
-  <h1>Google Maps distance calculation</h1>
+  <h1>Mileage App</h1>
 </header>
 
 <div role="main">
-  <p>
-    <label>From</label>
-    <input type="text" id="addr_from" value="amsterdam">
-    <label>To</label>
-    <input type="text" id="addr_to" value="rotterdam">
+  <fieldset>
+    <legend>Get your route</legend>
+    <p>
+      <label>From</label>
+      <input type="text" id="addr_from" value="amsterdam">
+    </p>
+    <p>
+      <label>To</label>
+      <input type="text" id="addr_to" value="rotterdam">
+    </p>
+    <p>
+      <button type="submit" id="calc">Go</button>
+    </p>
+  </fieldset>
+  <section id="map">
+  </section>
 
-    <button type="submit" id="calc">Go</button>
-  </p>
-  <div id="results">
-  </div>
 </div>
+
+<section id="results">
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Distance</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody id="resultrows">
+
+    </tbody>
+  </table>
+</section>
+
+
+<div id="debug">
+</div>
+
 <footer>
   By @graafdemichiel &amp; @lekkerduidelijk
 </footer>
