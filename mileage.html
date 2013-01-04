@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Google Maps distance calculation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="normalize.css">
+<style>
+  body {
+    padding: 1em;
+    font-size: 1.3em;
+  }
+  #results {
+    padding: 20px;
+    border: 2px solid #ccc;
+
+  }
+</style>
+
+<header>
+  <h1>Google Maps distance calculation</h1>
+</header>
+
+<div role="main">
+  <p>
+    <label>From</label>
+    <input type="text" id="addr_from" value="amsterdam">
+    <label>To</label>
+    <input type="text" id="addr_to" value="rotterdam">
+
+    <button type="submit" id="calc">Go</button>
+  </p>
+  <div id="results">
+  </div>
+</div>
+<footer>
+  By @graafdemichiel &amp; @lekkerduidelijk
+</footer>
+
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+
+
+</body>
