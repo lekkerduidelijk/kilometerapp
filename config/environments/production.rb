@@ -1,6 +1,9 @@
 Kilometerapp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # RL: Needed for action mailer
+  config.action_mailer.default_url_options = { :host => "kilometer.co" }
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

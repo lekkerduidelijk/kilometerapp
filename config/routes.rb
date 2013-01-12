@@ -1,12 +1,16 @@
 Kilometerapp::Application.routes.draw do
 
+#  get "home/index"
 
-  get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "users#new"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "register" => "users#new", :as => "register"
+  get "forgot" => "password_resets#new", :as => "forgot"
+  root :to => "home#index"
+
   resources :users
   resources :sessions
+  resources :password_resets
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
