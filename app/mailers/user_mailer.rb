@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "forgot@kilometer.co"
+  default from: "noreply@kilometer.co"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def password_reset(user)
     @user = user
-    mail :to => user.email, :subject => "[kilometerapp] Password Reset"
+    mail :to => user.email, :subject => "[kilometerapp] Wachtwoord reset"
   end
 
 end
